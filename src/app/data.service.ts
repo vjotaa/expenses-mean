@@ -31,7 +31,7 @@ export class DataService {
   constructor(private http: HttpClient) {}
 
   getExpenses(): Observable<Expense[]> {
-    const url = `${this.url}/conta/gastos`;
+    const url = `/conta/gastos`;
     return this.http
       .get<Expense[]>(url)
       .pipe(
@@ -41,7 +41,7 @@ export class DataService {
   }
 
   createExpense(expense: Expense): Observable<Expense> {
-    const url = `${this.url}/conta/gasto`;
+    const url = `/conta/gasto`;
     return this.http
       .post<Expense>(url, expense, httpOptions)
       .pipe(
@@ -51,7 +51,7 @@ export class DataService {
   }
 
   updateExpense(id: string, expense: Expense): Observable<any> {
-    const url = `${this.url}/conta/gasto/${id}`;
+    const url = `/conta/gasto/${id}`;
     return this.http
       .put(url, expense, httpOptions)
       .pipe(
@@ -61,7 +61,7 @@ export class DataService {
   }
 
   deleteExpense(id: string): Observable<Expense> {
-    const url = `${this.url}/conta/gasto/${id}`;
+    const url = `/conta/gasto/${id}`;
     return this.http
       .delete<Expense>(url, httpOptions)
       .pipe(
