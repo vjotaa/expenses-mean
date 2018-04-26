@@ -1,26 +1,5 @@
-<!-- <div class="container-fluid">
-  <div class="row">
-    <button *ngIf="!create" (click)="onCreate()" class=" margin-right btn btn-outline-warning">Agregar gasto</button>
-    <div class="col-3">
-      <div class="row">
-        <div class="col-12">
-          <div *ngIf="displayCreate">
-
-            <app-add-expense></app-add-expense>
-          </div>
-        </div>
-        <div *ngIf="edit" class="hidden col-12" [style.display]="hidden()">
-          <app-update-expense></app-update-expense>
-        </div>
-      </div>
-    </div>
-    <div class="col-9">
-      <app-expenses>
-      </app-expenses>
-    </div>
-  </div>
-</div> -->
 <div class="container-fluid">
+  <h4 class="center">Control de gastos</h4>
   <button *ngIf="!create" (click)="onCreate()" class=" margin-right btn btn-outline-warning">Agregar gasto</button>
   <div class="row">
     <div class="col-3">

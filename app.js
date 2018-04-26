@@ -6,11 +6,17 @@ const app = express();
 const mongoose = require('mongoose');
 const api = require('./server/routes/expense');
 
-mongoose.connect('mongodb://localhost:27017/expense-db', (err, res) => {
-  err
-    ? console.log('Error in the database: ', err)
-    : console.log('Connected to: ' + 'mongodb://localhost:27017/expense-db');
-});
+mongoose.connect(
+  'mongodb://user:user@ds259089.mlab.com:59089/expense-db',
+  (err, res) => {
+    err
+      ? console.log('Error in the database: ', err)
+      : console.log(
+          'Connected to: ' +
+            'mongodb://user:user@ds259089.mlab.com:59089/expense-db'
+        );
+  }
+);
 
 const port = process.env.PORT;
 app.use(bodyParser.urlencoded({ extended: false }));
