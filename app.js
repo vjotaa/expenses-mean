@@ -12,7 +12,7 @@ mongoose.connect('mongodb://localhost:27017/expense-db', (err, res) => {
     : console.log('Connected to: ' + 'mongodb://localhost:27017/expense-db');
 });
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'dist')));
