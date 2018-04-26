@@ -6,10 +6,10 @@ const app = express();
 const mongoose = require('mongoose');
 const api = require('./server/routes/expense');
 
-mongoose.connect('mongodb://localhost:27017/expense', (err, res) => {
+mongoose.connect('mongodb://localhost:27017/expense-db', (err, res) => {
   err
     ? console.log('Error in the database: ', err)
-    : console.log('Connected to: ' + 'mongodb://localhost:27017/expense');
+    : console.log('Connected to: ' + 'mongodb://localhost:27017/expense-db');
 });
 
 const port = process.env.PORT || 5000;

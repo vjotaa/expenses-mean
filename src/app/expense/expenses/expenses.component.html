@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="row bottom list" *ngFor="let item of expenses$ | async">
+    <div class="col-8">
+      <p class="text">Nombre:
+        <span class="value">{{item.name}}</span>
+      </p>
+      <p class="text">Precio:
+        <span class="value">{{item.price}}$</span>
+      </p>
+      <span class="date">{{item.date| timeAgo}}</span>
+    </div>
+    <div class="col-4">
+      <button (click)="sendEdit($event, edit); sendInfo(item._id,item.name,item.price)" type="button" class=" margin-right btn btn-outline-warning">Editar gasto</button>
+      <button (click)="onDelete(item._id)" type="button" class=" margin-right btn btn-outline-danger">Eliminar gasto</button>
+    </div>
+  </div>
+</div>
